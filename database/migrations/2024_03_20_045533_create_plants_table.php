@@ -19,7 +19,8 @@ return new class extends Migration
             $table->decimal('plant_price', 10, 2)->nullable(false);
             $table->timestamps();
             // foreign keys
-            $table->foreign('seller_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('seller_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->index('seller_id');
         });
     }
 

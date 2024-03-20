@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('post_content');
             $table->timestamps();
             //fk
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
         });
         Schema::create('post_likes', function (Blueprint $table) {
             $table->bigIncrements('likes_id');
@@ -25,8 +25,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             //fk
-            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('post_id')->references('post_id')->on('post')->onDelete('cascade');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->unique(['post_id', 'user_id']); // Ensure a user can only like a post once
         });
     }

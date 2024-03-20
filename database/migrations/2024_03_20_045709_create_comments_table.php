@@ -18,8 +18,8 @@ return new class extends Migration
             $table->text('comment_content');
             $table->timestamps();
             //fk
-            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('post_id')->references('post_id')->on('post')->onDelete('cascade');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
         });
         Schema::create('comment_likes', function (Blueprint $table) {
             $table->bigIncrements('comment_like_id');
@@ -27,8 +27,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
         
-            $table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('comment_id')->references('comment_id')->on('comments')->onDelete('cascade');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->unique(['comment_id', 'user_id']); // Ensure a user can only like a comment once
         });
     }
