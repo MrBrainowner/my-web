@@ -1,14 +1,14 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'poppins';
 }
 body{
     min-height: 100vh;
-    background-color: #F4F8F7;
+    background-color: #3F7E54;
     padding: 10px;
 }
 .nav{
-    background-color: #3F7E54;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,6 +44,7 @@ nav a{
     text-decoration: none;
     color: #F4F8F7;
     height: 100%;
+    font-weight: 300;
 }
 nav a:hover{
     text-decoration: underline;
