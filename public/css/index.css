@@ -5,3 +5,59 @@
     margin-top: 10px;
     border-radius: 5px;
 }
+.intro{
+    width: 100%;
+    height: 70%;
+    background-color: #F4F8F7;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+}
+div .boxes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0 10px;
+}
+div .boxes div{
+    background-color: #3F7E5450;
+    border-radius: 10px;
+    color: #121212;
+    text-align: justify;
+    padding: 20px;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+/* mission vission */
+.m-v{
+    width: 100%;
+    height: 70%;
+    background-color: #3F7E54;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+/* call to action */
+.cta{
+    width: 100%;
+    height: 50%;
+    background-color: #3F7E54;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+/* community reviews */
+.com-rev{
+    width: 100%;
+    height: 80%;
+    background-color: #3F7E54;
+    margin-top: 10px;
+    border-radius: 5px;
+}
