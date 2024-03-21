@@ -26,7 +26,7 @@
       <div class="account">
         <ul>
           <li><a href="account">Log In</a></li>
-          <li><a href="account">Sign Up</a></li>
+          <li><div class="sign-up"><a href="account">Sign Up</a></div></li>
         </ul>
       </div>
     </nav>

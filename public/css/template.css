@@ -59,3 +59,11 @@ nav a:hover{
     display: flex;
     justify-content: flex-end;
 }
+.account .sign-up{
+    background-color: #F4F8F7;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+.account .sign-up a{
+    color: #3F7E54;
+}
