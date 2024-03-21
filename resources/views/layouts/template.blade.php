@@ -35,6 +35,10 @@
       {{-- yield content --}}
       @yield('content')
       {{-- footer --}}
-    <div class="footer"></div>
+    <div class="footer">
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+    </div>
 </body>
 </html>
