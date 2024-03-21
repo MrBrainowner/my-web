@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class accountController extends Controller
 {
     public function account(){
-        return view('account');
+        return view('pages.account');
     }
 }

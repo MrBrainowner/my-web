@@ -1,0 +1,7 @@
+.hero-container{
+    width: 100%;
+    height: calc(100vh - 85px);
+    background-color: #3F7E54;
+    margin-top: 10px;
+    border-radius: 5px;
+}
