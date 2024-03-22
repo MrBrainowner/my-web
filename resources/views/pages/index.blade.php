@@ -1,4 +1,5 @@
 @extends('layouts.template')
+@section('title')
 @section('content')
     {{-- hero section --}}
     <div class="content-container"></div>
