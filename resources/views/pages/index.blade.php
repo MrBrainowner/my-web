@@ -1,7 +1,7 @@
 @extends('layouts.template')
 @section('content')
     {{-- hero section --}}
-    <div class="hero-container"></div>
+    <div class="content-container"></div>
     {{-- introductions --}}
     <div class="intro container-fluid">
         <h1>Lorem Ipsum</h1>
