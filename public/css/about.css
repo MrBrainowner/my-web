@@ -1,0 +1,12 @@
+.about-content{
+    padding: 50px;
+    text-align: justify;
+}
+.about-content p{
+    text-indent: 50px;
+}
+.about-content h2{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}

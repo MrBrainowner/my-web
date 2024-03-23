@@ -1,5 +1,14 @@
 @extends('layouts.template')
-@section('title', '| About')
+@section('title', 'About |')
 @section('content')
-    <div class="content-container"></div>
+    <div class="content-container">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat laudantium dolorem, qui eveniet deleniti nostrum, voluptate repudiandae ducimus perferendis minus ad velit quam tempore et tempora quasi natus expedita ut quos inventore quas mollitia suscipit vero veniam. Vel praesentium provident asperiores perferendis. Aliquid delectus quis explicabo, placeat dolore nostrum aspernatur quidem harum voluptatem necessitatibus modi sapiente dignissimos, dolorum minus voluptas temporibus eaque earum mollitia illo eos quas expedita. Nihil at omnis rem accusantium enim alias a impedit voluptate esse, error animi eum, odit deserunt hic autem tempora laudantium eos quibusdam doloribus? Fugit recusandae itaque explicabo distinctio, odit doloribus quas rerum.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat laudantium dolorem, qui eveniet deleniti nostrum, voluptate repudiandae ducimus perferendis minus ad velit quam tempore et tempora quasi natus expedita ut quos inventore quas mollitia suscipit vero veniam. Vel praesentium provident asperiores perferendis. Aliquid delectus quis explicabo, placeat dolore nostrum aspernatur quidem harum voluptatem necessitatibus modi sapiente dignissimos, dolorum minus voluptas temporibus eaque earum mollitia illo eos quas expedita. Nihil at omnis rem accusantium enim alias a impedit voluptate esse, error animi eum, odit deserunt hic autem tempora laudantium eos quibusdam doloribus? Fugit recusandae itaque explicabo distinctio, odit doloribus quas rerum.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat laudantium dolorem, qui eveniet deleniti nostrum, voluptate repudiandae ducimus perferendis minus ad velit quam tempore et tempora quasi natus expedita ut quos inventore quas mollitia suscipit vero veniam. Vel praesentium provident asperiores perferendis. Aliquid delectus quis explicabo, placeat dolore nostrum aspernatur quidem harum voluptatem necessitatibus modi sapiente dignissimos, dolorum minus voluptas temporibus eaque earum mollitia illo eos quas expedita. Nihil at omnis rem accusantium enim alias a impedit voluptate esse, error animi eum, odit deserunt hic autem tempora laudantium eos quibusdam doloribus? Fugit recusandae itaque explicabo distinctio, odit doloribus quas rerum.</p>
+            </div>
+        </div>
+    </div>
 @endsection

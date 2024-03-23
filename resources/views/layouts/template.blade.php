@@ -11,7 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/template.css">
-    <title>{{ config('app.name') }} @yield('title')</title>
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/about.css">
+    <title>@yield('title') {{ config('app.name') }}</title>
 </head>
 <body>
     {{-- nav bar --}}
@@ -27,7 +29,7 @@
       </div>
       <div class="account">
         <ul>
-          <li><div class="log-in"><a href="account">Log In</a></div></li>
+          <li><div class="log-in"><a href="account">Sign In</a></div></li>
           <li><div class="sign-up"><a href="account">Sign Up</a></div></li>
         </ul>
       </div>
