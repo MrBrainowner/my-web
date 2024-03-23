@@ -1,6 +1,7 @@
 @extends('layouts.account')
 @section('form')
-    <form action="" method="post" class="form">
+    <form action="{{ route('signup') }}" method="POST" class="form">
+        @csrf
         <div class="f-link">
             <h4 class="disabled-link">Sign Up</h4>
             <h4 class="or">or</h4>
