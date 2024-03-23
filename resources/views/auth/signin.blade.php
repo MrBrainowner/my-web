@@ -13,9 +13,7 @@
         <input type="email" name="email" id="email" required>
         <label for="pass">Password</label>
         <input type="password" name="pass" id="pass" required>
-        <label for="rpass">Repeat Password</label>
-        <input type="password" name="rpass" id="rpass" required>
-        <button type="submit" id="button">Sign In</button>
+        <button type="submit" id="button">Sign Up</button>
     </form>
 @endsection
 

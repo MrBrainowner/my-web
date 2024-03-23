@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
@@ -29,11 +30,16 @@ class AccountController extends Controller
             'rpass' => 'required|same:password',
         ]);
 
+        $user = new User();
+        $user->name = $request->username;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->pass);
+        $user->save();
+
+        return redirect()->route('home')->with('success', 'Registration successful. Please log in.');
+
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        $name = $request->input('username');
-        $email = $request->input('email');
-        $password = $request->input('pass');
     }
 }
