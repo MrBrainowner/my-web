@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
@@ -13,19 +14,24 @@ class AccountController extends Controller
         return view('auth.signin', compact('currentPage'));
     }
     public function signin(Request $request){
-        $request->validate([
-            'name' => 'required',
+         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            // Authentication successful
+            return redirect()->intended('/dashboard')->with('success', 'Logged in successfully!');
+        } else {
+            // Authentication failed
+            return back()->withErrors(['email' => 'Invalid credentials']);
+        }
     }
-    
     public function ShowSignupForm(){
         $currentPage = '/signup';
         return view('auth.signup', compact('currentPage'));
     }
     public function signup(Request $request){
-        // Validate the form data
         $request->validate([
             'username' => 'required',
             'email' => 'required|email|unique:users',
