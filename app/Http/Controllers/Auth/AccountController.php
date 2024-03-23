@@ -12,9 +12,12 @@ class AccountController extends Controller
         $currentPage = '/signin';
         return view('auth.signin', compact('currentPage'));
     }
-    public function signin(){
-        $currentPage = '/signin';
-        return view('auth.signin', compact('currentPage'));
+    public function signin(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
     }
     
     public function ShowSignupForm(){
@@ -23,7 +26,7 @@ class AccountController extends Controller
     }
     public function signup(Request $request){
         // Validate the form data
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             'username' => 'required',
             'email' => 'required|email|unique:users',
             'pass' => 'required|min:8',
@@ -38,8 +41,5 @@ class AccountController extends Controller
 
         return redirect()->route('home')->with('success', 'Registration successful. Please log in.');
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
     }
 }
