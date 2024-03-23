@@ -29,8 +29,8 @@
       </div>
       <div class="account">
         <ul>
-          <li><div class="log-in"><a href="account">Sign In</a></div></li>
-          <li><div class="sign-up"><a href="account">Sign Up</a></div></li>
+          <li><div class="log-in"><a href="signin">Sign In</a></div></li>
+          <li><div class="sign-up"><a href="signup">Sign Up</a></div></li>
         </ul>
       </div>
     </nav>

@@ -11,5 +11,9 @@ Route::get('/home', [PagesController::class, 'home'] );
 Route::get('/about', [PagesController::class, 'about'] );
 Route::get('/contact', [PagesController::class, 'contact'] );
 Route::get('/products', [productsController::class, 'products'] );
-Route::get('/account', [accountController::class, 'account'] );
 
+
+Route::controller(accountController::class)->group(function(){
+    Route::get('/signin', 'signin')->name('signin');
+    Route::get('/signup', 'signup')->name('singup');
+});
