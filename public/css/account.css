@@ -20,8 +20,22 @@
     width: 100%;
     padding: 10px;
 }
-.f-link h3 a{
-    color: #121212;
+.f-link h4 a{
+    color: #F4F8F7;
+    text-decoration: none;
+    background-color: #3F7E54;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+.f-link h4 a:hover{
+    background-color: #3F7E5450;
+}
+.disabled-link{
+    opacity: 0.5;
+    background-color: #e8f0ed;
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: default;
 }
 .or{
     margin: 0 10px;

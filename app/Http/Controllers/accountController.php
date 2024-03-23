@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 class accountController extends Controller
 {
     public function signin(){
-        return view('pages.signin');
+        $currentPage = '/signin';
+        return view('pages.signin', compact('currentPage'));
     }
+    
     public function signup(){
-        return view('pages.signup');
+        $currentPage = '/signup';
+        return view('pages.signup', compact('currentPage'));
     }
 }
