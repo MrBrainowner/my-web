@@ -7,10 +7,20 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\SignInRequest;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Middleware\Authenticate;
 
 
 class AccountController extends Controller
 {
+    public function index()
+    {
+        if (!Auth::check()) {
+            return redirect()->route('index')->with('error', 'You need to log in to access this page.');
+        }
+        else {
+            return view('auth.profile');
+        }
+    }
     public function ShowSigninForm(){
         $currentPage = '/signin';
         return view('auth.signin', compact('currentPage'));
@@ -22,10 +32,8 @@ class AccountController extends Controller
         ]);
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            // Authentication successful
             return redirect()->route('home')->with('success', 'Logged In successful');
         } else {
-            // Authentication failed
             return back()->withErrors(['email' => 'Invalid credentials']);
         }
     }

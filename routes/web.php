@@ -19,4 +19,5 @@ Route::controller(AccountController::class)->group(function(){
     Route::post('/signin', 'signin')->name('signin.submit');
     Route::get('/signup', 'ShowSignupForm')->name('signup');
     Route::post('/signup', 'signup')->name('singup.submit');
+    Route::get('/profile', 'index')->name('profile');
 });
