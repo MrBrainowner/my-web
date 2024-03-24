@@ -11,7 +11,7 @@
         <input type="email" name="email" id="email" required>
         <label for="pass">Password</label>
         <input type="password" name="pass" id="pass" required>
-        <button type="submit" id="button">Sign Up</button>
+        <button type="submit" id="button">Sign In</button>
     </form>
 @endsection
 

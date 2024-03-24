@@ -7,32 +7,6 @@
             {{ session('error') }}
         </div>
     </div>
-    {{-- animation and error msg --}}
-    <style>
-        .error-div{
-            position: absolute; 
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        @keyframes fadeOut {
-        from { opacity: 1; }
-        to { opacity: 0; }
-        }
-        
-        .fadeOut {
-            animation-name: fadeOut;
-            animation-duration: 3s;
-            animation-delay: 1s
-        }
-    </style>
-    <script>
-        // Hide error message after 3 seconds (3000 milliseconds)
-        setTimeout(function() {
-            document.getElementById('errorMessage').style.display = 'none';
-        }, 3000);
-    </script>
     @endif
     {{-- hero section --}}
     <div class="content-container"></div>

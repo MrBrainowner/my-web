@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AccountController;
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\Pages\PagesController;
 use App\Http\Controllers\productsController;
+use App\Http\Controllers\Pages\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(PagesController::class)->group(function(){
@@ -19,5 +20,8 @@ Route::controller(AccountController::class)->group(function(){
     Route::post('/signin', 'signin')->name('signin.submit');
     Route::get('/signup', 'ShowSignupForm')->name('signup');
     Route::post('/signup', 'signup')->name('singup.submit');
-    Route::get('/profile', 'index')->name('profile');
+});
+
+Route::controller(ProfileController::class)->group(function(){
+    Route::get('/profile', 'ProfileController@profile')->name('profile');
 });

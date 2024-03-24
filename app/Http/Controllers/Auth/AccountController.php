@@ -1,42 +1,16 @@
 <?php
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\SignInRequest;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Middleware\Authenticate;
 
 
 class AccountController extends Controller
 {
-    public function index()
-    {
-        if (!Auth::check()) {
-            return redirect()->route('index')->with('error', 'You need to log in to access this page.');
-        }
-        else {
-            return view('auth.profile');
-        }
-    }
-    public function ShowSigninForm(){
-        $currentPage = '/signin';
-        return view('auth.signin', compact('currentPage'));
-    }
-    public function signin(SignInRequest $request){
-         $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->route('home')->with('success', 'Logged In successful');
-        } else {
-            return back()->withErrors(['email' => 'Invalid credentials']);
-        }
-    }
+    //sign up form
     public function ShowSignupForm(){
         $currentPage = '/signup';
         return view('auth.signup', compact('currentPage'));
@@ -55,7 +29,25 @@ class AccountController extends Controller
         $user->password = bcrypt($request->pass);
         $user->save();
 
-        return redirect()->route('home')->with('success', 'Registration successful');
+        return redirect()->route('pages.home')->with('success', 'Registration successful');
 
+    }
+    
+    // sign in form
+    public function ShowSigninForm(){
+        $currentPage = '/signin';
+        return view('auth.signin', compact('currentPage'));
+    }
+    public function signin(SignInRequest $request){
+         $request->validate([
+            'email' => 'required|email',
+            'pass' => 'required',
+        ]);
+        $credentials = $request->only('email', 'pass');
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('profile')->with('success', 'Logged In successful');
+        } else {
+            return back()->withErrors(['email' => 'Invalid credentials']);
+        }
     }
 }
