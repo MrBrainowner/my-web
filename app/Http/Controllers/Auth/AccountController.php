@@ -6,17 +6,24 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\SignInRequest;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Middleware\ProtectPage;
+use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Routing\Controllers\HasMiddleware;
 
 class AccountController extends Controller
-{
+{   
+
+    public function __construct()
+    {
+        new Middleware('protect');
+    }
 
     //sign up form
-    public function ShowSignupForm(){
-        $currentPage = '/signup';
-        return view('auth.signup', compact('currentPage'));
+    public function ShowRegisterForm(){
+        $currentPage = '/register';
+        return view('auth.register', compact('currentPage'));
     }
-    public function signup(Request $request){
+    public function register(Request $request){
         $request->validate([
             'username' => 'required',
             'email' => 'required|email|unique:users',
@@ -35,11 +42,11 @@ class AccountController extends Controller
     }
     
     // sign in form
-    public function ShowSigninForm(){
-        $currentPage = '/signin';
-        return view('auth.signin', compact('currentPage'));
+    public function ShowLogInForm(){
+        $currentPage = '/login';
+        return view('auth.login', compact('currentPage'));
     }
-    public function signin(SignInRequest $request){
+    public function login(SignInRequest $request){
          $request->validate([
             'email' => 'required|email',
             'pass' => 'required',

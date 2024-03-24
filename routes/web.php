@@ -17,14 +17,18 @@ Route::controller(PagesController::class)->group(function(){
 
 Route::controller(AccountController::class)->group(function(){
     //sign in route
-    Route::get('/signin', 'ShowSigninForm')->name('signin');
-    Route::post('/signin', 'signin')->name('signin.submit')->middleware('auth');
+    Route::get('/login', 'ShowLogInForm')->name('login');
+    Route::post('/login', 'login')->name('login.submit')->middleware('auth');
     //sign up route
-    Route::get('/signup', 'ShowSignupForm')->name('signup');
-    Route::post('/signup', 'signup')->name('singup.submit');
+    Route::get('/register', 'ShowRegisterForm')->name('register');
+    Route::post('/register', 'register')->name('register.submit');
 });
 
 Route::controller(ProfileController::class)->group(function(){
-    Route::get('/profile', 'profile')->name('profile')->middleware('auth');
+    Route::get('/profile', 'profile')->name('profile')->middleware('protect');
 });
+
+// Route::middleware(middleware:'auth')->group(function(){
+//     Route::get('/profile', 'profile')->name('profile');
+// });
 

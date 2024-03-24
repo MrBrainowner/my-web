@@ -1,4 +1,4 @@
-.error-div{
+.alert-div{
     position: absolute; 
     width: 100%;
     display: flex;
@@ -12,6 +12,6 @@ to { opacity: 0; }
 
 .fadeOut {
     animation-name: fadeOut;
-    animation-duration: 3s;
-    animation-delay: 1s
+    animation-duration: 2s;
+    animation-delay: 3s
 }
