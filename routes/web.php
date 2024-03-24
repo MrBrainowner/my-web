@@ -16,12 +16,15 @@ Route::controller(PagesController::class)->group(function(){
 });
 
 Route::controller(AccountController::class)->group(function(){
+    //sign in route
     Route::get('/signin', 'ShowSigninForm')->name('signin');
-    Route::post('/signin', 'signin')->name('signin.submit');
+    Route::post('/signin', 'signin')->name('signin.submit')->middleware('auth');
+    //sign up route
     Route::get('/signup', 'ShowSignupForm')->name('signup');
     Route::post('/signup', 'signup')->name('singup.submit');
 });
 
 Route::controller(ProfileController::class)->group(function(){
-    Route::get('/profile', 'ProfileController@profile')->name('profile');
+    Route::get('/profile', 'profile')->name('profile')->middleware('auth');
 });
+

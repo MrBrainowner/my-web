@@ -1,13 +1,6 @@
 @extends('layouts.template')
 @section('title')
 @section('content')
-    @if(session('error'))
-    <div class="error-div">
-        <div id="errorMessage" class="alert alert-danger fadeOut">
-            {{ session('error') }}
-        </div>
-    </div>
-    @endif
     {{-- hero section --}}
     <div class="content-container"></div>
     {{-- introductions --}}

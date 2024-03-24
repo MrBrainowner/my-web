@@ -36,6 +36,13 @@
         </ul>
       </div>
     </nav>
+    @if(session('error'))
+    <div class="error-div">
+        <div id="errorMessage" class="alert alert-danger fadeOut">
+            {{ session('error') }}
+        </div>
+    </div>
+    @endif
       {{-- yield content --}}
       @yield('content')
       {{-- footer --}}

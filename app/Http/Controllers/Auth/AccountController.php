@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
+
     //sign up form
     public function ShowSignupForm(){
         $currentPage = '/signup';
@@ -20,7 +21,7 @@ class AccountController extends Controller
             'username' => 'required',
             'email' => 'required|email|unique:users',
             'pass' => 'required|min:8',
-            'rpass' => 'required|same:password',
+            'rpass' => 'required|same:pass',
         ]);
 
         $user = new User();
@@ -29,7 +30,7 @@ class AccountController extends Controller
         $user->password = bcrypt($request->pass);
         $user->save();
 
-        return redirect()->route('pages.home')->with('success', 'Registration successful');
+        return redirect()->route('profile')->with('success', 'Registration successful');
 
     }
     
